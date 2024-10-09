@@ -1,26 +1,30 @@
 package de.hwglu.bwi351_2.u03Suchen;
 
 public class BinaereSuche {
+
   public static void main(String[] args) {
     int[] folge = { 0, 1, 2, 4, 5, 8, 9, 12, 13, 18};
+    int sucheigenschaft = 9;
+    System.out.println(binarySearch(folge, sucheigenschaft));
+  }
 
-    int sucheigenschaft = 9;   //alternativ  = 10;
-    int unter = 0, ober = folge.length - 1;
-
+  public static int binarySearch(int[] folge, int sucheigenschaft) {
     int resultat = -1;
-//  -1 steht für nicht gefunden
-//   Falls ein Element mit der Sucheigenschaft gefunden wird, muss die
-//   Variable resultat auf den Index des Elementes gesetzt werden 
-    
+    int unter = 0;
+    int ober = folge.length - 1;
+    int mitte;
 
-//  hier kommt der Algorithmus rein
-    while (unter <= ober                    ){
-    	
-    
-    	
-    	
+    while (unter <= ober && resultat == -1){
+      mitte = unter + (ober - unter) / 2;
+      if (folge[mitte] < sucheigenschaft) {
+        unter = mitte + 1;
+      } else if (folge[mitte] > sucheigenschaft) {
+        ober = mitte - 1;
+      } else {
+        resultat = mitte;
+      }
     }
 
-    System.out.println(resultat);
+    return resultat;
   }
 }

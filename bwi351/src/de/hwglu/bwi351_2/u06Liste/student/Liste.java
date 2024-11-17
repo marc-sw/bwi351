@@ -1,4 +1,4 @@
-package de.hwglu.bwi351_2.u06Liste;
+package de.hwglu.bwi351_2.u06Liste.student;
 
 public class Liste {
   private Knoten anker;
@@ -7,34 +7,34 @@ public class Liste {
     this.anker = null;
   }
 
-  public void einfuegenAnfang (int Zahl) {
-    this.anker = new Knoten (Zahl, this.anker);
+  public void einfuegenAnfang (Student student) {
+    this.anker = new Knoten(student, this.anker);
   }
 
-  public void einfuegenEnde (int Zahl) {
+  public void einfuegenEnde(Student student) {
     if ( this.anker != null ) {
       Knoten k = this.anker;
       while ( k.Nf != null)
         k = k.Nf;
-      k.Nf = new Knoten (Zahl, null);
+      k.Nf = new Knoten (student, null);
     }
     else
-      this.einfuegenAnfang(Zahl);
+      this.einfuegenAnfang(student);
   }
 
-  public boolean suchen(int schluessel) {
+  public Student suchen(int schluessel) {
     for (Knoten current = this.anker; current != null; current = current.Nf) {
-      if (schluessel == current.Zahl) {
-        return true;
+      if (schluessel == current.student.getNummer()) {
+        return current.student;
       }
     }
-      return false;
+      return null;
   }
 
   public int max() {
     int result = Integer.MIN_VALUE;
     for (Knoten current = this.anker; current != null; current = current.Nf) {
-      result = Math.max(result, current.Zahl);
+      result = Math.max(result, current.student.getNummer());
     }
     return result;
 

@@ -2,9 +2,6 @@ package de.hwglu.bwi351_1.v02AlgKomplexitaet;
 
 public class P1SchleifenMessen {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		long timeStart = System.currentTimeMillis();

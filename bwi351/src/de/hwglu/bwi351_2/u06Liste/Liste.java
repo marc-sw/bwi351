@@ -40,7 +40,6 @@ public class Liste {
     if (this.anker != null) {
       this.anker = anker.Nf;
     }
-    //asd
   }
 
 }

@@ -11,38 +11,12 @@ public class Liste {
     this.anker = new Knoten(student, this.anker);
   }
 
-  public void einfuegenEnde(Student student) {
-    if ( this.anker != null ) {
-      Knoten k = this.anker;
-      while ( k.Nf != null)
-        k = k.Nf;
-      k.Nf = new Knoten (student, null);
-    }
-    else
-      this.einfuegenAnfang(student);
-  }
-
   public Student suchen(int schluessel) {
-    for (Knoten current = this.anker; current != null; current = current.Nf) {
-      if (schluessel == current.student.getNummer()) {
-        return current.student;
+    for (Knoten knoten = this.anker; knoten != null; knoten = knoten.naechsterKnoten) {
+      if (schluessel == knoten.student.getNummer()) {
+        return knoten.student;
       }
     }
       return null;
   }
-
-  public int max() {
-    int result = Integer.MIN_VALUE;
-    for (Knoten current = this.anker; current != null; current = current.Nf) {
-      result = Math.max(result, current.student.getNummer());
-    }
-    return result;
-
-  }
-  public void loeschenAnfang() {
-    if (this.anker != null) {
-      this.anker = anker.Nf;
-    }
-  }
-
 }

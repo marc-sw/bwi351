@@ -1,11 +1,12 @@
 package de.hwglu.bwi351_2.u06Liste.student;
 
 public class Knoten {
-  Student student;
-  Knoten Nf;    //Nachfolger
 
-  public Knoten(Student student, Knoten Nf) {
+  Student student;
+  Knoten naechsterKnoten;    //Nachfolger
+
+  public Knoten(Student student, Knoten naechsterKnoten) {
     this.student = student;
-    this.Nf = Nf;
+    this.naechsterKnoten = naechsterKnoten;
   }
 }

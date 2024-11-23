@@ -1,11 +1,8 @@
 package de.hwglu.bwi351_2.u06Liste;
 
 public class Liste {
-  private Knoten anker;
 
-  public Liste() {
-    this.anker = null;
-  }
+  private Knoten anker;
 
   public void einfuegenAnfang (int Zahl) {
     this.anker = new Knoten (Zahl, this.anker);
@@ -24,17 +21,17 @@ public class Liste {
 
   public boolean suchen(int schluessel) {
     for (Knoten current = this.anker; current != null; current = current.Nf) {
-      if (schluessel == current.Zahl) {
+      if (schluessel == current.Zahl)
         return true;
-      }
     }
-      return false;
+    return false;
   }
 
   public int max() {
     int result = Integer.MIN_VALUE;
     for (Knoten current = this.anker; current != null; current = current.Nf) {
-      result = Math.max(result, current.Zahl);
+      if (current.Zahl > result)
+        result = current.Zahl;
     }
     return result;
 

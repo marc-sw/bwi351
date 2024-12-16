@@ -20,7 +20,7 @@ public class P1QuickSort {
       // Pivotelement bestimmen
       int pivot = feld[(unten + oben) / 2];
       while (unten <= oben) {
-        // Erstes Element suchen, das größer oder gleich dem
+        // Erstes Element suchen, das grï¿½ï¿½er oder gleich dem
         // Pivotelement ist, beginnend vom linken Index
         while (feld[unten] < pivot)
           unten++;
@@ -43,9 +43,10 @@ public class P1QuickSort {
   }
 
   public static void main(String[] args) {
-    int[] feld = { 4, 9, 2, 5, 3, 7,	8};
+//    int[] feld = { 4, 9, 2, 5, 3, 7,	8};
 //    int[] feld = { 2, 6, 4, 5, 7, 9, 8};
 //    int[] feld = { 8, 2, 1,5,9, 7,3 };
+    int[] feld = {2, 6, 4, 5, 7, 9, 8};
 
     qsort (feld, 0, feld.length - 1);
     printArray(feld);
